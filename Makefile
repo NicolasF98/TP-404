@@ -1,6 +1,11 @@
+all: test_lexeme calculette
+
 
 test_lexeme: analyse_lexicale.o  lecture_caracteres.o  test_lexeme.o
 	gcc -g -Wall -o test_lexeme analyse_lexicale.o  lecture_caracteres.o  test_lexeme.o
+
+calculette: analyse_lexicale.o analyse_syntaxique.o lecture_caracteres.o calculette.o
+	gcc -g -Wall -o calculette analyse_lexicale.o analyse_syntaxique.o lecture_caracteres.o calculette.o
 
 analyse_lexicale.o: analyse_lexicale.c analyse_lexicale.h lecture_caracteres.h
 	gcc -g -Wall -c analyse_lexicale.c
@@ -13,5 +18,3 @@ test_lexeme.o: analyse_lexicale.h
 
 clean:
 	rm -f  test_lexeme *.o
-
-
