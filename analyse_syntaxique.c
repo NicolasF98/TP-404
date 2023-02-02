@@ -9,7 +9,6 @@
 void analyser(char *fichier)
 {
     demarrer(fichier);
-    git ();
 
     while (! fin_de_sequence()) 
     { 
