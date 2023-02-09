@@ -3,25 +3,28 @@
 #include "analyse_lexicale.h"
 
 int main (int argc, char *argv[]) {
-   switch (argc) {
+    switch (argc) 
+    {
         case 1:
-		// demarre l'analyse lexicale sur stdin
-   		analyser ("") ; 
-                break ;
+            // demarre l'analyse lexicale sur stdin
+            analyser ("");
+            break;
         case 2:
-		// demarre l'analyse lexicale sur le fichier transmis en argument
-   		analyser (argv[1]) ; 
-                break ;
+            // demarre l'analyse lexicale sur le fichier transmis en argument
+            analyser(argv[1]); 
+            break;
         default:
-                printf("nombre d'arguments incorrects !\n");
-                exit(1) ;
-   } ;
+            printf("nombre d'arguments incorrects !\n");
+            exit(1);
+    };
 
-    while (! fin_de_sequence()) { 
-        afficher (lexeme_courant()) ;
-	    printf("\n") ;
-	    avancer() ;
-    } ;
-   arreter() ; // termine l'analyse lexicale
-   return 0 ;
+    while (! fin_de_sequence()) 
+    { 
+        afficher (lexeme_courant());
+	    printf("\n");
+	    avancer();
+    };
+    
+    arreter(); // termine l'analyse lexicale
+    return 0;
 }
